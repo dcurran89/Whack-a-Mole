@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whack-a-Mole</title>
+    <script src="http://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/whackamole.css">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            "use strict";
+
+            var sequence = [];
+            var setIndex = 0;
+            // var clickIndex = 0;
+            // var colorIndex = 0;
+            var $square = $('.square');
+            var $start = $('#start');
+            var $watch = $('#watch');
+            var $round = $('#round');
+            
+            function animate() {
+                setInterval(function(){
+                    var random = Math.floor(Math.random() * $square.length);
+                    $square.eq(random).toggleClass("hide");
+                    console.log("random: " + random);
+                }, 1000);
+            };//end of animate
+            animate();
+            // $start.click(function(){
+            // });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div id="row1" class="row">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="0">
+            <div class="square hide">
+            </div>
+        </div>
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="1">
+            <div class="square hide">
+            </div>
+        </div>
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="2">
+            <div class="square hide">
+            </div>
+        </div>
+    </div>
+    <div id="row2" class="row">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="3">
+            <div class="square hide">
+            </div>
+        </div>
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="4">
+            <div class="square hide">
+            </div>
+        </div>
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="5">
+            <div class="square hide">
+            </div>
+        </div>
+    </div>
+    <div id="row3" class="row">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="6">
+            <div class="square hide">
+            </div>
+        </div>
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="7">
+            <div class="square hide">
+            </div>
+        </div>
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="8">
+            <div class="square hide">
+            </div>
+        </div>
+    </div>
+    <button id="start">
+    Start
+    </button>
+</div>
+<!-- Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
+</html>
