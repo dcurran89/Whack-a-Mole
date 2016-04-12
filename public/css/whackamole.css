@@ -1,17 +1,43 @@
 .box {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
+    width: 125px;
+    height: 125px;
+    border: 1px solid #ffeb99;
     padding: 0px;
+    border-radius: 300px;
 }
 .square {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     background-image: url("/img/theMole.jpeg");
-    border: 1px solid black;
-}
-.hide {
-    width: 100px;
-    height: 100px;
     display: none;
+    border-radius: 60px
+}
+.show {
+    display: block;
+}
+body {
+    background-image: url("/img/goldmember.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container {
+    margin-top: 200px;
+}
+.round {
+    width: 120px;
+    height: 120px;
+    background-color: blue;
+    position: absolute;
+    margin: 0px 0px 0px 0px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+.score {
+    width: 120px;
+    height: 120px;
+    background-color: blue;
+    position: absolute;
+    margin: 130px 0px 0px 0px;
+    border-radius: 20px;
+    border: 1px solid white;
 }

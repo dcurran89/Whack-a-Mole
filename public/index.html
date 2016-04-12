@@ -9,73 +9,117 @@
         $(document).ready(function(){
             "use strict";
 
-            var sequence = [];
-            var setIndex = 0;
-            // var clickIndex = 0;
-            // var colorIndex = 0;
-            var $square = $('.square');
+            var $squares = $('.square');
             var $start = $('#start');
-            var $watch = $('#watch');
-            var $round = $('#round');
+            var $score = $('#score');
+            var score = 0;
+        
+
+            var random = function(){
+                var randomSquare = Math.round(Math.random() * $squares.length);
+                console.log("randomSquare is: " + randomSquare);
+                return randomSquare;
+            }
             
-            function animate() {
-                setInterval(function(){
-                    var random = Math.floor(Math.random() * $square.length);
-                    $square.eq(random).toggleClass("hide");
-                    console.log("random: " + random);
-                }, 1000);
-            };//end of animate
-            animate();
-            // $start.click(function(){
-            // });
+            function showMole() {
+                var randomSquare = Math.round(Math.random() * $squares.length);
+                $squares.removeClass("show");
+                $squares.eq(randomSquare).addClass("show");
+                console.log("random mole: " + random());
+            }
+
+            $squares.click(function(){
+                    $squares.removeClass("show");
+                    if(score >= 5){
+                        $('#moley').get(0).play();
+                    }
+                    score++;
+                    $score.html("The score is now: " + score);
+                    console.log("clicked random: " + random());
+            });
+            $start.click(function(){
+                $(this).attr("disabled", true);
+                $('#meetmole').get(0).play();
+                setInterval(showMole, 2000);
+            });
+            // function gameOver(){
+            //     $start.enable();
+            // }
+            // function gameLoop() {
+            //     do {
+            //         var newMole = getRandomMole();
+            //     } while (activeMoles.indexOf(newMole) != -1);
+            //     activeMoles.push(newMole);
+            // }
         });
     </script>
 </head>
 <body>
+<audio id="meetmole">
+  <source src="/audio/meetyoumole.mp3" type="audio/mpeg">
+</audio>
+<audio id="moley">
+  <source src="/audio/moley.mp3" type="audio/mpeg">
+</audio>
 <div class="container">
-    <div id="row1" class="row">
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="0">
-            <div class="square hide">
+    <div class="round">
+        <p id="round"></p>
+    </div>
+    <div class="score">
+        <p id="score">The score is: 0</p>
+    </div>
+    <div id="row1" class="row col-md-offset-4">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="0">
+            <div class="square">
+
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="1">
-            <div class="square hide">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="1">
+            <div class="square">
+
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="2">
-            <div class="square hide">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="2">
+            <div class="square">
+
             </div>
         </div>
     </div>
-    <div id="row2" class="row">
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="3">
-            <div class="square hide">
+    <div id="row2" class="row col-md-offset-4">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="3">
+            <div class="square">
+
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="4">
-            <div class="square hide">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="4">
+            <div class="square">
+
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="5">
-            <div class="square hide">
-            </div>
-        </div>
-    </div>
-    <div id="row3" class="row">
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="6">
-            <div class="square hide">
-            </div>
-        </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="7">
-            <div class="square hide">
-            </div>
-        </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" id="" data-number="8">
-            <div class="square hide">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="5">
+            <div class="square">
+
             </div>
         </div>
     </div>
-    <button id="start">
+    <div id="row3" class="row col-md-offset-4">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="6">
+            <div class="square">
+
+            </div>
+        </div>
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="7">
+            <div class="square">
+
+            </div>
+        </div>
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="8">
+            <div class="square">
+
+            </div>
+        </div>
+    </div>
+    <button class="col-md-offset-4" id="start">
     Start
     </button>
 </div>
