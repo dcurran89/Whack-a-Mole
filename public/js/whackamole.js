@@ -10,7 +10,7 @@ $(document).ready(function(){
     var moleInterval = null;
     
     var myCounter = new countdown({  
-        seconds: 5,  // number of seconds to count down
+        seconds: 30,  // number of seconds to count down
         onUpdateStatus: function(sec){
             $timer.html("TIME LEFT: " + sec);
         }, // callback for each second
