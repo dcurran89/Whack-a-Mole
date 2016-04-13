@@ -24,7 +24,7 @@ body {
     margin-top: 200px;
 }
 .timer {
-    width: 160px;
+    width: 180px;
     height: 50px;
     background-color: #4AA0FE;
     position: absolute;
@@ -37,9 +37,10 @@ body {
     color: #E4CB66;
     text-shadow: 2px 2px 2px black;
     margin: 10px;
+    text-align: center;
 }
 .score {
-    width: 160px;
+    width: 180px;
     height: 50px;
     background-color: #4AA0FE;
     position: absolute;
@@ -52,10 +53,11 @@ body {
     color: #E4CB66;
     text-shadow: 2px 2px 2px black;
     margin: 10px;
+    text-align: center;
 
 }
 #start {
-    width: 160px;
+    width: 180px;
     height: 50px;
     background-color: #4AA0FE;
     position: absolute;
@@ -68,6 +70,7 @@ body {
     color: #E4CB66;
     text-shadow: 2px 2px 2px black;
     margin: 10px;
+    text-align: center;
 }
 #secret_gif {
     display: none;

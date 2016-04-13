@@ -18,7 +18,7 @@
             var moleInterval = null;
             
             var myCounter = new countdown({  
-                seconds: 30,  // number of seconds to count down
+                seconds: 5,  // number of seconds to count down
                 onUpdateStatus: function(sec){
                     $timer.html("TIME LEFT: " + sec);
                 }, // callback for each second
@@ -50,6 +50,7 @@
                 $('#secret_gif').slideDown().delay(3000).slideUp();
                 $('#laugh').get(0).play();
             }
+
 
             function countdown(options) {
                 var timer,
@@ -96,6 +97,7 @@
 
             $start.click(function(){
                 $(this).attr("disabled", true);
+                $score.html('SCORE: 0');
                 $('#meetmole').get(0).play();
                 moleInterval = setInterval(showMole, 1000);
                 myCounter.start();
@@ -140,51 +142,53 @@
         <p id="score">SCORE: 0</p>
     </div>
     <div id="row1" class="row col-md-offset-4">
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="0">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="1">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="2">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
         </div>
-    </div> <!-- end of row 1 -->
+    </div> 
+
     <div id="row2" class="row col-md-offset-4">
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="3">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="4">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="5">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
         </div>
     </div>
+
     <div id="row3" class="row col-md-offset-4">
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="6">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="7">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
         </div>
-        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4" data-number="8">
+        <div class="box col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="square">
 
             </div>
